@@ -1,0 +1,16 @@
+PODS:
+  - GithubSwiftApi (0.1.0)
+
+DEPENDENCIES:
+  - GithubSwiftApi (~> 0.1)
+
+SPEC REPOS:
+  trunk:
+    - GithubSwiftApi
+
+SPEC CHECKSUMS:
+  GithubSwiftApi: 41205de8d2049adc1d9691eb73b19810eacea2c7
+
+PODFILE CHECKSUM: 82d0ed0a210d32c6c4c9269b90e68b0b18cd8913
+
+COCOAPODS: 1.9.3

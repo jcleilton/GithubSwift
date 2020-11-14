@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  GithubSwift
 //
 //  Created by Cleilton Feitosa on 13/11/20.
@@ -8,12 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        view.backgroundColor = .red
     }
-
-
 }
-

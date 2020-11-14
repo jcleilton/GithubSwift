@@ -16,5 +16,10 @@ target 'GithubSwift' do
   target 'GithubSwiftUITests' do
     # Pods for testing
   end
+  
+  target 'GithubSwiftSnapshotTests' do
+    inherit! :search_paths
+    pod 'iOSSnapshotTestCase'
+  end
 
 end

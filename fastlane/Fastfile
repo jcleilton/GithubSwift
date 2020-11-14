@@ -17,7 +17,10 @@ default_platform(:ios)
 
 platform :ios do
   desc "Generate new localized screenshots"
-  lane :screenshots do
-    capture_screenshots(workspace: "GithubSwift.xcworkspace", scheme: "GithubSwift")
+  lane :increment do
+    increment_build_number(
+    build_number: latest_testflight_build_number + 1,
+    xcodeproj: "${PROJECT_NAME}.xcodeproj"
+  )
   end
 end

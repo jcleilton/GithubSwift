@@ -8,6 +8,15 @@
 
 import Foundation
 
-class MainViewModel {
+protocol MainViewModelDelegate: AnyObject {
     
+}
+
+class MainViewModel {
+    weak var delegate: (MainViewModelDelegate & DefaultViewDelegate)?
+    private let businessModel: MainBussinesModelProtocol
+    
+    init(businessModel: MainBussinesModelProtocol = MainBusinessModel()) {
+        self.businessModel = businessModel
+    }
 }

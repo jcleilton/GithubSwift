@@ -27,52 +27,52 @@ class MainViewTableViewCell: UITableViewCell {
     
     lazy var starImageView: UIImageView = {
         let obj = UIImageView()
-        obj.image = UIImage(named: "star")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
-        obj.tintColor = .yellow
+        obj.image = Constant.image.star?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        obj.tintColor = Constant.color.starColor
         obj.contentMode = .scaleAspectFit
         return obj
     }()
     
     lazy var repoNameLabel: UILabel = {
         let obj = UILabel()
-        obj.text = Constant.string.REPO_NAME
-        obj.font = Constant.font.TITLE_LABEL
+        obj.text = Constant.string.repoName
+        obj.font = Constant.font.titleLabel
         obj.setContentHuggingPriority(.defaultHigh, for: NSLayoutConstraint.Axis.horizontal)
         obj.textAlignment = .left
-        obj.textColor = .white
+        obj.textColor = Constant.color.titleLabel
         return obj
     }()
     
     lazy var repoNameValueLabel: UILabel = {
         let obj = UILabel()
-        obj.font = Constant.font.TITLE_LABEL
+        obj.font = Constant.font.titleLabel
         obj.textAlignment = .left
-        obj.textColor = .white
+        obj.textColor = Constant.color.titleLabel
         return obj
     }()
     
     lazy var authorNameLabel: UILabel = {
         let obj = UILabel()
-        obj.text = Constant.string.AUTHOR_NAME
+        obj.text = Constant.string.authorName
         obj.textAlignment = .left
         obj.setContentHuggingPriority(.defaultHigh, for: NSLayoutConstraint.Axis.horizontal)
-        obj.font = Constant.font.LABEL
-        obj.textColor = .white
+        obj.font = Constant.font.label
+        obj.textColor = Constant.color.label
         return obj
     }()
     
     lazy var authorNameValueLabel: UILabel = {
         let obj = UILabel()
-        obj.font = Constant.font.LABEL
+        obj.font = Constant.font.label
         obj.textAlignment = .left
-        obj.textColor = .white
+        obj.textColor = Constant.color.label
         return obj
     }()
     
     lazy var starQuantityLabel: UILabel = {
         let obj = UILabel()
-        obj.font = Constant.font.TITLE_LABEL
-        obj.textColor = .yellow
+        obj.font = Constant.font.titleLabel
+        obj.textColor = Constant.color.starColor
         obj.textAlignment = .right
         return obj
     }()
@@ -84,10 +84,10 @@ class MainViewTableViewCell: UITableViewCell {
     }
     
     private func setupCell() {
-        self.contentView.backgroundColor = .clear
-        self.backgroundColor = .clear
+        self.contentView.backgroundColor = Constant.color.clean
+        self.backgroundColor = Constant.color.clean
         
-        self.mainView.backgroundColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.3)
+        self.mainView.backgroundColor = Constant.color.backgroundColorWithAlpha
         
         self.contentView.addSubview(self.mainView)
         self.mainView.addSubview(self.photoImageView)
@@ -108,45 +108,45 @@ class MainViewTableViewCell: UITableViewCell {
         self.starQuantityLabel.translatesAutoresizingMaskIntoConstraints = false
         
         self.mainView.anchor(
-            top: (anchor: self.contentView.topAnchor, constant: 10),
-            bottom: (anchor: self.contentView.bottomAnchor, constant: -10),
-            left: (anchor: self.contentView.leftAnchor, constant: 10),
-            right: (anchor: self.contentView.rightAnchor, constant: -10))
+            top: (anchor: self.contentView.topAnchor, constant: Constant.distance.vertical.normal),
+            bottom: (anchor: self.contentView.bottomAnchor, constant: -Constant.distance.vertical.normal),
+            left: (anchor: self.contentView.leftAnchor, constant: Constant.distance.horizontal.normal),
+            right: (anchor: self.contentView.rightAnchor, constant: -Constant.distance.horizontal.normal))
         
         self.photoImageView.anchor(
-            top: (anchor: self.mainView.topAnchor, constant: 0),
-            left: (anchor: self.mainView.leftAnchor, constant: 0),
-            right: (anchor: self.mainView.rightAnchor, constant: 0),
-            relativeHeight: (anchor: self.mainView.heightAnchor, multiplier: 0.8, constant: 0))
+            top: (anchor: self.mainView.topAnchor, constant: Constant.distance.zero),
+            left: (anchor: self.mainView.leftAnchor, constant: Constant.distance.zero),
+            right: (anchor: self.mainView.rightAnchor, constant: Constant.distance.zero),
+            relativeHeight: (anchor: self.mainView.heightAnchor, multiplier: 0.8, constant: Constant.distance.zero))
         
         self.repoNameLabel.anchor(
-            top: (anchor: self.photoImageView.bottomAnchor, constant: 15),
-            left: (anchor: self.mainView.leftAnchor, constant: 10))
+            top: (anchor: self.photoImageView.bottomAnchor, constant: Constant.distance.vertical.big),
+            left: (anchor: self.mainView.leftAnchor, constant: Constant.distance.horizontal.normal))
         
         self.repoNameValueLabel.anchor(
-            centerY: (anchor: self.repoNameLabel.centerYAnchor, constant: 0),
-            left: (anchor: self.repoNameLabel.rightAnchor, constant: 5),
-            right: (anchor: self.mainView.rightAnchor, constant: -5))
+            centerY: (anchor: self.repoNameLabel.centerYAnchor, constant: Constant.distance.zero),
+            left: (anchor: self.repoNameLabel.rightAnchor, constant: Constant.distance.horizontal.extraSmall),
+            right: (anchor: self.mainView.rightAnchor, constant: -Constant.distance.horizontal.extraSmall))
         
         self.authorNameLabel.anchor(
-            top: (anchor: self.repoNameLabel.bottomAnchor, constant: 8),
-            left: (anchor: self.repoNameLabel.leftAnchor, constant: 0))
+            top: (anchor: self.repoNameLabel.bottomAnchor, constant: Constant.distance.vertical.small),
+            left: (anchor: self.repoNameLabel.leftAnchor, constant: Constant.distance.zero))
         
         self.authorNameValueLabel.anchor(
-            centerY: (anchor: self.authorNameLabel.centerYAnchor, constant: 0),
-            left: (anchor: self.authorNameLabel.rightAnchor, constant: 5),
-            right: (anchor: self.starQuantityLabel.leftAnchor, constant: 5))
+            centerY: (anchor: self.authorNameLabel.centerYAnchor, constant: Constant.distance.zero),
+            left: (anchor: self.authorNameLabel.rightAnchor, constant: Constant.distance.horizontal.extraSmall),
+            right: (anchor: self.starQuantityLabel.leftAnchor, constant: Constant.distance.horizontal.extraSmall))
         
         self.starImageView.anchor(
-            centerY: (anchor: self.authorNameLabel.centerYAnchor, constant: -6),
-            right: (anchor: self.mainView.rightAnchor, constant: -10))
+            centerY: (anchor: self.authorNameLabel.centerYAnchor, constant: -Constant.distance.vertical.small),
+            right: (anchor: self.mainView.rightAnchor, constant: -Constant.distance.horizontal.normal))
         
         self.starImageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         self.starImageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         
         self.starQuantityLabel.anchor(
-            centerY: (anchor: self.authorNameValueLabel.centerYAnchor, constant: 0),
-            right: (anchor: self.starImageView.leftAnchor, constant: -8))
+            centerY: (anchor: self.authorNameValueLabel.centerYAnchor, constant: Constant.distance.zero),
+            right: (anchor: self.starImageView.leftAnchor, constant: -Constant.distance.horizontal.small))
         
         self.updateConstraints()
     }
@@ -157,7 +157,7 @@ class MainViewTableViewCell: UITableViewCell {
             self.authorNameValueLabel.text = viewModel.authorName
             self.starQuantityLabel.text = "\(viewModel.stargazersCount)"
             viewModel.delegate = self
-            self.photoImageView.image = UIImage(named: "placeholder")
+            self.photoImageView.image = Constant.image.placeholder
             viewModel.loadImage()
         }
         
@@ -173,6 +173,6 @@ extension MainViewTableViewCell: DownloadImageDataDelegate {
     }
     
     func didFailLoadingImage() {
-        self.photoImageView.image = UIImage(named: "placeholder")
+        self.photoImageView.image = Constant.image.placeholder
     }
 }

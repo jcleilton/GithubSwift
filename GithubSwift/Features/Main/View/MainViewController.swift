@@ -13,15 +13,15 @@ class MainViewController: DefaultViewController {
     
     lazy var tableView: UITableView = {
         let obj = UITableView()
-        obj.backgroundColor = .clear
+        obj.backgroundColor = Constant.color.clean
         obj.separatorStyle = .none
         return obj
     }()
     
     lazy var emptyLabel: UILabel = {
         let obj = UILabel()
-        obj.font = Constant.font.LABEL
-        obj.text = Constant.string.EMPTY_LABEL_TEXT
+        obj.font = Constant.font.label
+        obj.text = Constant.string.emptyLabelText
         obj.textColor = .white
         obj.textAlignment = .center
         return obj
@@ -76,6 +76,10 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

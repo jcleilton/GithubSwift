@@ -23,11 +23,11 @@ class DefaultViewController: UIViewController {
         if #available(iOS 13.0, *) {
             self.overrideUserInterfaceStyle = .light
         }
-        self.view.backgroundColor = Constant.color.MAIN
+        self.view.backgroundColor = Constant.color.main
     }
     
     func setupNavigation(_ title: String? = nil) {
-        self.navigationItem.title = title ?? Constant.string.APP_NAME
+        self.navigationItem.title = title ?? Constant.string.appName
     }
     
     func showActivity(){
@@ -42,7 +42,7 @@ class DefaultViewController: UIViewController {
             labelActivity.center = (activityController?.center)!
             labelActivity.frame.origin.x = ((activityController?.bounds.width ?? 0.0) - labelActivity.bounds.width)/2
             labelActivity.frame.origin.y = activity.frame.origin.y + activity.bounds.height + 8
-            labelActivity.text = Constant.string.LOADING_TEXT
+            labelActivity.text = Constant.string.loadingText
             labelActivity.textAlignment = .center
             labelActivity.textColor = UIColor.white
             
@@ -62,7 +62,7 @@ class DefaultViewController: UIViewController {
     
     func showAlert(title: String?, message: String?, confirmActionHandler: ((_ action: UIAlertAction) -> Void)?, completion: (() -> Void)?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: Constant.string.OK, style: .default, handler: confirmActionHandler)
+        let confirmAction = UIAlertAction(title: Constant.string.ok, style: .default, handler: confirmActionHandler)
         alert.addAction(confirmAction)
         DispatchQueue.main.async{ [weak self] in
             self?.present(alert, animated: true, completion: completion)

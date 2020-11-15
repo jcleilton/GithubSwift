@@ -7,7 +7,16 @@
 //
 
 import Foundation
+import GithubSwiftApi
 
-class MainBusinessModel {
+protocol MainBussinesModelProtocol {
     
+}
+
+class MainBusinessModel: MainBussinesModelProtocol {
+    private let api: GithubSwiftProtocol
+    
+    init(api: GithubSwiftProtocol = GithubSwiftApi()) {
+        self.api = api
+    }
 }

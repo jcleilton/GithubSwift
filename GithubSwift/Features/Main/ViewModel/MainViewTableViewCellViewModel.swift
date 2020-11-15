@@ -1,5 +1,5 @@
 //
-//  MainViewCollectionCellViewModel.swift
+//  MainViewTableViewCellViewModel.swift
 //  GithubSwift
 //
 //  Created by Cleilton Feitosa on 15/11/20.
@@ -13,7 +13,7 @@ protocol DownloadImageDataDelegate: AnyObject {
     func didFailLoadingImage()
 }
 
-class MainViewCollectionCellViewModel {
+class MainViewTableViewCellViewModel {
     weak var delegate: DownloadImageDataDelegate?
     private let model: MainModel
     var userID: Int {

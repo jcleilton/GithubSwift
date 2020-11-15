@@ -30,7 +30,7 @@ class DefaultViewController: UIViewController {
         self.navigationItem.title = title ?? Constant.string.APP_NAME
     }
     
-    fileprivate func showActivity(){
+    func showActivity(){
         if activityController == nil {
             activityController = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
             activityController?.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6)
@@ -56,7 +56,7 @@ class DefaultViewController: UIViewController {
         navigationController.view.addSubview(activityController!)
     }
     
-    fileprivate func hideActivity(){
+    func hideActivity(){
         activityController?.removeFromSuperview()
     }
     
@@ -67,21 +67,5 @@ class DefaultViewController: UIViewController {
         DispatchQueue.main.async{ [weak self] in
             self?.present(alert, animated: true, completion: completion)
         }
-    }
-}
-
-extension DefaultViewController: DefaultViewDelegate {
-    func showLoading() {
-        self.showActivity()
-    }
-    
-    func hideLoading() {
-        self.hideActivity()
-    }
-    
-    func reloadData() { }
-    
-    func showError(message: String) {
-        self.showAlert(title: ":(", message: message, confirmActionHandler: nil, completion: nil)
     }
 }

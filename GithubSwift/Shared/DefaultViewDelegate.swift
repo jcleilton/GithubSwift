@@ -16,15 +16,3 @@ protocol DefaultViewDelegate: AnyObject {
     func reloadData()
     func showError(message: String)
 }
-
-extension DefaultViewDelegate {
-    func didFinishFetching() {
-        self.hideLoading()
-        self.reloadData()
-    }
-    
-    func didFailFetching(message: String) {
-        self.hideLoading()
-        self.showError(message: message)
-    }
-}

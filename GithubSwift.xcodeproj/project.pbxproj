@@ -19,8 +19,8 @@
 		0A9711C02561902D00515689 /* MainBusinessModelDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9711BF2561902D00515689 /* MainBusinessModelDummy.swift */; };
 		0A9711C62561906E00515689 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9711C52561906E00515689 /* MainModel.swift */; };
 		0A9711CC2561954C00515689 /* MainViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9711CB2561954C00515689 /* MainViewHeader.swift */; };
-		0A9711D22561956B00515689 /* MainViewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9711D12561956B00515689 /* MainViewCollectionCell.swift */; };
-		0A9711D8256195BB00515689 /* MainViewCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9711D7256195BB00515689 /* MainViewCollectionCellViewModel.swift */; };
+		0A9711D22561956B00515689 /* MainViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9711D12561956B00515689 /* MainViewTableViewCell.swift */; };
+		0A9711D8256195BB00515689 /* MainViewTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9711D7256195BB00515689 /* MainViewTableViewCellViewModel.swift */; };
 		0A9711E22561967E00515689 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9711E12561967E00515689 /* DetailViewController.swift */; };
 		0A9711EC2561969700515689 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9711EB2561969700515689 /* DetailHeaderView.swift */; };
 		0A9711F2256196B700515689 /* DetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9711F1256196B700515689 /* DetailContentView.swift */; };
@@ -29,6 +29,8 @@
 		0A9712052561997C00515689 /* DefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9712042561997C00515689 /* DefaultViewController.swift */; };
 		0A97120F256199F700515689 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97120E256199F700515689 /* Constant.swift */; };
 		0A97121525619E3600515689 /* DefaultViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97121425619E3500515689 /* DefaultViewDelegate.swift */; };
+		0A97122A2561BC0B00515689 /* MainModelApiParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9712292561BC0B00515689 /* MainModelApiParse.swift */; };
+		0A9712302561C61A00515689 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97122F2561C61A00515689 /* UIView+Extension.swift */; };
 		4C5DE0380725925E0F7D834A /* Pods_GithubSwiftSnapshotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE2F5C2E81EE583A69EC8D2 /* Pods_GithubSwiftSnapshotTests.framework */; };
 		6CB9CEB106AB96740FE96AD7 /* Pods_GithubSwift_GithubSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423FD2D15D4923198496094B /* Pods_GithubSwift_GithubSwiftUITests.framework */; };
 		C6637780EFF8E8AE8236952C /* Pods_GithubSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CCAFBCCD92232CB59D04E9 /* Pods_GithubSwiftTests.framework */; };
@@ -80,8 +82,8 @@
 		0A9711BF2561902D00515689 /* MainBusinessModelDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBusinessModelDummy.swift; sourceTree = "<group>"; };
 		0A9711C52561906E00515689 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		0A9711CB2561954C00515689 /* MainViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewHeader.swift; sourceTree = "<group>"; };
-		0A9711D12561956B00515689 /* MainViewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCollectionCell.swift; sourceTree = "<group>"; };
-		0A9711D7256195BB00515689 /* MainViewCollectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCollectionCellViewModel.swift; sourceTree = "<group>"; };
+		0A9711D12561956B00515689 /* MainViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTableViewCell.swift; sourceTree = "<group>"; };
+		0A9711D7256195BB00515689 /* MainViewTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		0A9711E12561967E00515689 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0A9711EB2561969700515689 /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
 		0A9711F1256196B700515689 /* DetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +92,8 @@
 		0A9712042561997C00515689 /* DefaultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultViewController.swift; sourceTree = "<group>"; };
 		0A97120E256199F700515689 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		0A97121425619E3500515689 /* DefaultViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultViewDelegate.swift; sourceTree = "<group>"; };
+		0A9712292561BC0B00515689 /* MainModelApiParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModelApiParse.swift; sourceTree = "<group>"; };
+		0A97122F2561C61A00515689 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		1C0B5EAA6B2F5568432A961F /* Pods-GithubSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubSwiftTests.debug.xcconfig"; path = "Target Support Files/Pods-GithubSwiftTests/Pods-GithubSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2EE2F5C2E81EE583A69EC8D2 /* Pods_GithubSwiftSnapshotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubSwiftSnapshotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		423FD2D15D4923198496094B /* Pods_GithubSwift_GithubSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubSwift_GithubSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,7 +157,7 @@
 			children = (
 				0A6D5207255F36A100F2B430 /* MainViewController.swift */,
 				0A9711CB2561954C00515689 /* MainViewHeader.swift */,
-				0A9711D12561956B00515689 /* MainViewCollectionCell.swift */,
+				0A9711D12561956B00515689 /* MainViewTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				0A6D5209255F36EF00F2B430 /* MainViewModel.swift */,
-				0A9711D7256195BB00515689 /* MainViewCollectionCellViewModel.swift */,
+				0A9711D7256195BB00515689 /* MainViewTableViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -172,6 +176,7 @@
 			children = (
 				0A6D520B255F372B00F2B430 /* MainBusinessModel.swift */,
 				0A9711BF2561902D00515689 /* MainBusinessModelDummy.swift */,
+				0A9712292561BC0B00515689 /* MainModelApiParse.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				0A9712042561997C00515689 /* DefaultViewController.swift */,
 				0A97120E256199F700515689 /* Constant.swift */,
 				0A97121425619E3500515689 /* DefaultViewDelegate.swift */,
+				0A97122F2561C61A00515689 /* UIView+Extension.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -638,13 +644,15 @@
 				0A9711EC2561969700515689 /* DetailHeaderView.swift in Sources */,
 				0A97120F256199F700515689 /* Constant.swift in Sources */,
 				0A9711C02561902D00515689 /* MainBusinessModelDummy.swift in Sources */,
-				0A9711D8256195BB00515689 /* MainViewCollectionCellViewModel.swift in Sources */,
+				0A97122A2561BC0B00515689 /* MainModelApiParse.swift in Sources */,
+				0A9711D8256195BB00515689 /* MainViewTableViewCellViewModel.swift in Sources */,
 				0A9712052561997C00515689 /* DefaultViewController.swift in Sources */,
 				0A97121525619E3600515689 /* DefaultViewDelegate.swift in Sources */,
 				0A9711C62561906E00515689 /* MainModel.swift in Sources */,
-				0A9711D22561956B00515689 /* MainViewCollectionCell.swift in Sources */,
+				0A9711D22561956B00515689 /* MainViewTableViewCell.swift in Sources */,
 				0A6D5208255F36A100F2B430 /* MainViewController.swift in Sources */,
 				0A9711CC2561954C00515689 /* MainViewHeader.swift in Sources */,
+				0A9712302561C61A00515689 /* UIView+Extension.swift in Sources */,
 				0A9711E22561967E00515689 /* DetailViewController.swift in Sources */,
 				0A9711F8256196CB00515689 /* DetailViewModel.swift in Sources */,
 				0A8FFC83255ED91400873F7F /* AppDelegate.swift in Sources */,

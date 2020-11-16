@@ -15,7 +15,7 @@ class GithubSwiftSnapshotTests: FBSnapshotTestCase {
     override func setUp() {
         super.setUp()
         
-        recordMode = true
+        recordMode = false
 //        usesDrawViewHierarchyInRect = true
         fileNameOptions = [.device, .screenSize]
     }

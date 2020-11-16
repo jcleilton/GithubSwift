@@ -32,6 +32,14 @@ class MainViewController: DefaultViewController {
         return obj
     }()
     
+    lazy var refreshControle: UIRefreshControl = { [weak self] in
+        guard let self = self else { return UIRefreshControl() }
+        let obj = UIRefreshControl()
+        obj.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
+        return obj
+    }()
+    
+    
     init(viewModel: MainViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -47,6 +55,29 @@ class MainViewController: DefaultViewController {
         self.setupView()
         self.viewModel.fetch()
     }
+    
+    @objc func refreshData() {
+        self.viewModel.refreshData()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset
+        let bounds = scrollView.bounds
+        let size = scrollView.contentSize
+        let inset = scrollView.contentInset
+        let y = offset.y + bounds.size.height - inset.bottom
+        let h = size.height
+        let reload_distance: CGFloat = 10.0
+        
+        if (y > (h + reload_distance)) {
+            if self.refreshControle.isRefreshing {
+                return
+            }
+            viewModel.fetch()
+        }
+    }
+    
+
     
     private func setupView() {
         self.view.addSubview(self.headerView)
@@ -76,6 +107,8 @@ class MainViewController: DefaultViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        self.tableView.addSubview(self.refreshControle)
     }
 }
 
@@ -98,6 +131,12 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if let detailViewModel = viewModel.getDetailViewModel(from: indexPath) {
+            let detailViewController = DetailViewController(viewModel: detailViewModel)
+            self.present(detailViewController, animated: true, completion: nil)
+        } else {
+            self.showError(message: Constant.string.errorDetailPresent)
+        }
     }
 }
 
@@ -105,20 +144,21 @@ extension MainViewController: MainViewModelDelegate { }
 
 extension MainViewController: DefaultViewDelegate {
     func showLoading() {
-        DispatchQueue.main.async {
-            self.showActivity()
+        DispatchQueue.main.async { [weak self] in
+            self?.showActivity()
         }
     }
     
     func hideLoading() {
-        DispatchQueue.main.async {
-            self.hideActivity()
+        DispatchQueue.main.async { [weak self] in
+            self?.hideActivity()
+            self?.refreshControle.endRefreshing()
         }
     }
     
     func showError(message: String) {
-        DispatchQueue.main.async {
-            self.showAlert(title: ":(", message: message, confirmActionHandler: nil, completion: nil)
+        DispatchQueue.main.async { [weak self] in
+            self?.showAlert(title: ":(", message: message, confirmActionHandler: nil, completion: nil)
         }
     }
     

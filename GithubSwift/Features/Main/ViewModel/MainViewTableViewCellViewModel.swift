@@ -40,9 +40,6 @@ class MainViewTableViewCellViewModel {
     var cloneURL: String {
         model.cloneURL
     }
-    var watchersCount: Int {
-        model.watchersCount
-    }
     var score: Int {
         model.score
     }
@@ -65,5 +62,9 @@ class MainViewTableViewCellViewModel {
             return
         }
         self.delegate?.didLoadImage(data: imageDataUnwrapped)
+    }
+    
+    func parseToDetailViewModel() -> DetailViewModel {
+        DetailViewModel(model: model, imageData: imageData)
     }
 }

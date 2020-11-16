@@ -21,7 +21,6 @@ struct MainModelApiParse {
             itemDescription: $0.itemDescription,
             sshURL: $0.sshURL,
             cloneURL: $0.cloneURL,
-            watchersCount: $0.watchersCount,
             score: $0.score) }
     }
     

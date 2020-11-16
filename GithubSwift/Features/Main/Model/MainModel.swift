@@ -19,7 +19,6 @@ struct MainModel {
     let itemDescription: String
     let sshURL: String
     let cloneURL: String
-    let watchersCount: Int
     let score: Int
     
     func downloadImage(completion: @escaping((Data?) -> Void)) {

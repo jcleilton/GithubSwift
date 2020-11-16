@@ -12,19 +12,34 @@ import FBSnapshotTestCase
 @testable import GithubSwift
 
 class GithubSwiftSnapshotTests: FBSnapshotTestCase {
-
-    override func setUpWithError() throws {
-        try super.setUpWithError()
+    override func setUp() {
         super.setUp()
+        
+        recordMode = false
 //        usesDrawViewHierarchyInRect = true
         fileNameOptions = [.device, .screenSize]
     }
 
-    override func tearDownWithError() throws {
-        try super.tearDownWithError()
+    override func tearDown() {
+        super.tearDown()
     }
 
     func testMainScreen() throws {
+        let viewModel = DetailViewModel(model: MainModel(
+                                            userID: 1,
+                                            authorPhotoURL: "",
+                                            authorName: "Test",
+                                            repoID: 1,
+                                            repoName: "Test",
+                                            stargazersCount: 1,
+                                            itemDescription: "Test",
+                                            sshURL: "",
+                                            cloneURL: "",
+                                            score: 1), imageData: UIImage(named: "placeholder")?.pngData() ?? Data())
+        let sut = DetailViewController(viewModel: viewModel)
+        sut.beginAppearanceTransition(true, animated: false)
+        sut.endAppearanceTransition()
         
+        FBSnapshotVerifyView(sut.view)
     }
 }

@@ -63,4 +63,8 @@ class MainViewTableViewCellViewModel {
         }
         self.delegate?.didLoadImage(data: imageDataUnwrapped)
     }
+    
+    func parseToDetailViewModel() -> DetailViewModel {
+        DetailViewModel(model: model, imageData: imageData)
+    }
 }

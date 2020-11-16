@@ -26,6 +26,7 @@ struct Constant {
         }
         static let noData: String = "Algo não está certo: dados inválidos."
         static let invalidJson: String = "Não conseguimos ler os dados da requisição. por favor, tente mais tarde."
+        static let errorDetailPresent: String = "Não foi possível abrir os detalhes do repositório!"
     }
     
     struct color {
@@ -42,6 +43,7 @@ struct Constant {
     struct font {
         private static let defaultFamily: String = "NotoSansKannada"
         static let titleLabel: UIFont? = UIFont.init(name: defaultFamily + "-Bold", size: 18)
+        static let descriptionLabel: UIFont? = UIFont.init(name: defaultFamily, size: 17)
         static let label: UIFont? = UIFont.init(name: defaultFamily, size: 14)
     }
     

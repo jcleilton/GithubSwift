@@ -69,4 +69,11 @@ class MainViewModel {
         self.isLoading = false
         self.fetch()
     }
+    
+    func getDetailViewModel(from indexPath: IndexPath) -> DetailViewModel? {
+        if indexPath.row < self.cellViewModels.count {
+            return self.cellViewModels[indexPath.row].parseToDetailViewModel()
+        }
+        return nil
+    }
 }

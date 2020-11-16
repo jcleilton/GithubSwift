@@ -131,6 +131,12 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if let detailViewModel = viewModel.getDetailViewModel(from: indexPath) {
+            let detailViewController = DetailViewController(viewModel: detailViewModel)
+            self.present(detailViewController, animated: true, completion: nil)
+        } else {
+            self.showError(message: Constant.string.errorDetailPresent)
+        }
     }
 }
 

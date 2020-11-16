@@ -15,4 +15,16 @@ class MainBusinessModelDummy: MainBussinesModelProtocol {
     init(api: GithubSwiftProtocol = GithubSwiftMockApi()) {
         self.api = api
     }
+    
+    func fetch(page: String, completion: @escaping (Result<[MainModel], GithubSwiftError>) -> Void) {
+        api.fetch(page: page) { result in
+            switch result {
+            case .success(let apiModel):
+                let data = MainModelApiParse.get(from: apiModel)
+                completion(.success(data))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }

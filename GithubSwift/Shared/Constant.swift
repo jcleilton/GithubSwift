@@ -22,7 +22,7 @@ struct Constant {
         static let taskError: String = "Sem conexão com a internet. Tente mais tarde!"
         static let noResponse: String = "O servidor não encontrou os dados. Tente novamente!"
         static func invalidStatusCode(_ code: String) -> String {
-            return "Ocorreu um erro ao tentar trazer os dados. Código(\(code)"
+            return "Ocorreu um erro ao tentar trazer os dados. Código(\(code))"
         }
         static let noData: String = "Algo não está certo: dados inválidos."
         static let invalidJson: String = "Não conseguimos ler os dados da requisição. por favor, tente mais tarde."

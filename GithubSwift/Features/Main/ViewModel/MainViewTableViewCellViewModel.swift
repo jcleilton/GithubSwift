@@ -40,9 +40,6 @@ class MainViewTableViewCellViewModel {
     var cloneURL: String {
         model.cloneURL
     }
-    var watchersCount: Int {
-        model.watchersCount
-    }
     var score: Int {
         model.score
     }

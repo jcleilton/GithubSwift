@@ -19,6 +19,7 @@ class MainViewModel {
     var count: Int {
         self.cellViewModels.count
     }
+    private var isLoading: Bool = false
     
     init(businessModel: MainBussinesModelProtocol = MainBusinessModel()) {
         self.businessModel = businessModel
@@ -32,6 +33,10 @@ class MainViewModel {
     }
     
     func fetch() {
+        if self.isLoading {
+            return
+        }
+        self.isLoading = true
         self.delegate?.showLoading()
         if self.hasData {
             self.currentPage += 1
@@ -50,6 +55,7 @@ class MainViewModel {
                         self?.delegate?.didFailFetching(message: message)
                     }
                 }
+                self?.isLoading = false
             }
         } else {
             self.delegate?.hideLoading()
@@ -60,6 +66,7 @@ class MainViewModel {
         self.currentPage = 0
         self.hasData = true
         self.cellViewModels = []
+        self.isLoading = false
         self.fetch()
     }
 }

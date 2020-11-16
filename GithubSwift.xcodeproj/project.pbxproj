@@ -15,7 +15,6 @@
 		0A8FFC8F255ED91800873F7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A8FFC8D255ED91800873F7F /* LaunchScreen.storyboard */; };
 		0A8FFC9A255ED91900873F7F /* GithubSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8FFC99255ED91900873F7F /* GithubSwiftTests.swift */; };
 		0A8FFCA5255ED91900873F7F /* GithubSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8FFCA4255ED91900873F7F /* GithubSwiftUITests.swift */; };
-		0A971126256067B100515689 /* GithubSwiftSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A971125256067B100515689 /* GithubSwiftSnapshotTests.swift */; };
 		0A9711C02561902D00515689 /* MainBusinessModelDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9711BF2561902D00515689 /* MainBusinessModelDummy.swift */; };
 		0A9711C62561906E00515689 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9711C52561906E00515689 /* MainModel.swift */; };
 		0A9711CC2561954C00515689 /* MainViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9711CB2561954C00515689 /* MainViewHeader.swift */; };
@@ -31,6 +30,7 @@
 		0A97121525619E3600515689 /* DefaultViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97121425619E3500515689 /* DefaultViewDelegate.swift */; };
 		0A97122A2561BC0B00515689 /* MainModelApiParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9712292561BC0B00515689 /* MainModelApiParse.swift */; };
 		0A9712302561C61A00515689 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97122F2561C61A00515689 /* UIView+Extension.swift */; };
+		0AA9A8782562ADBE000BDDCC /* GithubSwiftSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A971125256067B100515689 /* GithubSwiftSnapshotTests.swift */; };
 		193CDF1D10DDDAF8F2615854 /* Pods_GithubSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF81FFD42E801455AC66179 /* Pods_GithubSwift.framework */; };
 		63F2BABD86970B9042773DE5 /* Pods_GithubSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A609E6A0352E2EC86D32385 /* Pods_GithubSwiftTests.framework */; };
 		830ED15CDF841EA7A8833AD3 /* Pods_GithubSwiftSnapshotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345818E3002D2704DD6FB9C9 /* Pods_GithubSwiftSnapshotTests.framework */; };
@@ -681,7 +681,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A971126256067B100515689 /* GithubSwiftSnapshotTests.swift in Sources */,
+				0AA9A8782562ADBE000BDDCC /* GithubSwiftSnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

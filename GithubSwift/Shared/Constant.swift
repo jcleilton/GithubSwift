@@ -32,9 +32,11 @@ struct Constant {
         static let main: UIColor = UIColor.black
         static let clean: UIColor = UIColor.clear
         static let backgroundColorWithAlpha: UIColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.3)
+        static let backgroundColorDarkWithAlpha: UIColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.7)
         static let titleLabel: UIColor = UIColor.white
         static let starColor: UIColor = UIColor.yellow
         static let label: UIColor = UIColor.white
+        static let orange: UIColor = UIColor.systemOrange
     }
     
     struct font {

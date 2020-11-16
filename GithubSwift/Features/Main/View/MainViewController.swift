@@ -11,6 +11,11 @@ import UIKit
 class MainViewController: DefaultViewController {
     let viewModel: MainViewModel
     
+    lazy var headerView: MainViewHeader = {
+        let obj = MainViewHeader()
+        return obj
+    }()
+    
     lazy var tableView: UITableView = {
         let obj = UITableView()
         obj.backgroundColor = Constant.color.clean
@@ -44,13 +49,26 @@ class MainViewController: DefaultViewController {
     }
     
     private func setupView() {
+        self.view.addSubview(self.headerView)
         self.view.addSubview(self.tableView)
         self.view.addSubview(self.emptyLabel)
         
+        self.headerView.translatesAutoresizingMaskIntoConstraints = false
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         self.emptyLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        self.tableView.anchorFillSuperview()
+        self.headerView.anchor(
+            top: (anchor: self.view.topAnchor, constant: Constant.distance.zero),
+            left: (anchor: self.view.leftAnchor, constant: Constant.distance.zero),
+            right: (anchor: self.view.rightAnchor, constant: Constant.distance.zero),
+            relativeHeight: (anchor: self.view.heightAnchor, multiplier: 0.12, constant: Constant.distance.zero))
+        
+        self.tableView.anchor(
+            top: (anchor: self.headerView.bottomAnchor, constant: Constant.distance.zero),
+            bottom: (anchor: self.view.bottomAnchor, constant: Constant.distance.zero),
+            left: (anchor: self.view.leftAnchor, constant: Constant.distance.zero),
+            right: (anchor: self.view.rightAnchor, constant: Constant.distance.zero))
+        
         self.emptyLabel.anchorFillSuperview()
         self.emptyLabel.isHidden = true
         

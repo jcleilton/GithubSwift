@@ -45,7 +45,7 @@ Projeto desenvolvido para iphones com linguagem nativa (XCode/Swift). É requiri
 
 1. Clone o repo
 ```sh
-git clone https://github.com/jcleilton/GithubSwift.gi
+git clone https://github.com/jcleilton/GithubSwift.git
 ```
 2. Dentro da pasta do repositorio, executar o script para permitir o uso do configMe.sh
 ```sh

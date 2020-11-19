@@ -117,7 +117,7 @@ class MainViewTableViewCell: UITableViewCell {
             top: (anchor: self.mainView.topAnchor, constant: Constant.distance.zero),
             left: (anchor: self.mainView.leftAnchor, constant: Constant.distance.zero),
             right: (anchor: self.mainView.rightAnchor, constant: Constant.distance.zero),
-            relativeHeight: (anchor: self.mainView.heightAnchor, multiplier: 0.8, constant: Constant.distance.zero))
+            relativeHeight: (anchor: self.mainView.heightAnchor, multiplier: 0.78, constant: Constant.distance.zero))
         
         self.repoNameLabel.anchor(
             top: (anchor: self.photoImageView.bottomAnchor, constant: Constant.distance.vertical.big),
@@ -140,6 +140,8 @@ class MainViewTableViewCell: UITableViewCell {
         self.starImageView.anchor(
             centerY: (anchor: self.authorNameLabel.centerYAnchor, constant: -Constant.distance.vertical.small),
             right: (anchor: self.mainView.rightAnchor, constant: -Constant.distance.horizontal.normal))
+        
+        self.authorNameLabel.bottomAnchor.constraint(lessThanOrEqualTo: self.mainView.bottomAnchor, constant: -2).isActive = true
         
         self.starImageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         self.starImageView.widthAnchor.constraint(equalToConstant: 30).isActive = true

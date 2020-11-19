@@ -109,7 +109,7 @@ class DetailHeaderView: UIView {
             top: (anchor: self.topAnchor, constant: Constant.distance.zero),
             left: (anchor: self.leftAnchor, constant: Constant.distance.zero),
             right: (anchor: self.rightAnchor, constant: Constant.distance.zero),
-            relativeHeight: (anchor: self.heightAnchor, multiplier: 0.8, constant: Constant.distance.zero))
+            relativeHeight: (anchor: self.heightAnchor, multiplier: 0.78, constant: Constant.distance.zero))
         
         self.repoNameLabel.anchor(
             top: (anchor: self.photoImageView.bottomAnchor, constant: Constant.distance.vertical.big),
@@ -128,6 +128,8 @@ class DetailHeaderView: UIView {
             centerY: (anchor: self.authorNameLabel.centerYAnchor, constant: Constant.distance.zero),
             left: (anchor: self.authorNameLabel.rightAnchor, constant: Constant.distance.horizontal.extraSmall),
             right: (anchor: self.starQuantityLabel.leftAnchor, constant: Constant.distance.horizontal.extraSmall))
+        
+        self.authorNameLabel.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: -2).isActive = true
         
         self.starImageView.anchor(
             centerY: (anchor: self.authorNameLabel.centerYAnchor, constant: -Constant.distance.vertical.small),
